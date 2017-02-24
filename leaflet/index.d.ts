@@ -593,7 +593,6 @@ declare namespace L {
     }
 
     class InternalPolyline extends Path {
-        getLatLngs(): LatLng[];
         setLatLngs(latlngs: LatLngExpression[]): this;
         isEmpty(): boolean;
         getCenter(): LatLng;
@@ -606,6 +605,7 @@ declare namespace L {
     export class Polyline extends InternalPolyline {
         constructor(latlngs: LatLngExpression[], options?: PolylineOptions);
         toGeoJSON(): GeoJSONFeature<GeoJSONLineString | GeoJSONMultiLineString>;
+        getLatLngs(): LatLng[];
 
         feature: GeoJSONFeature<GeoJSONLineString | GeoJSONMultiLineString>;
     }
@@ -615,6 +615,7 @@ declare namespace L {
     export class Polygon extends InternalPolyline {
         constructor(latlngs: LatLngExpression[], options?: PolylineOptions);
         toGeoJSON(): GeoJSONFeature<GeoJSONPolygon | GeoJSONMultiPolygon>;
+        getLatLngs(): LatLng[][];
 
         feature: GeoJSONFeature<GeoJSONPolygon | GeoJSONMultiPolygon>;
     }
