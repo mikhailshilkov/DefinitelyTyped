@@ -448,6 +448,16 @@ L.marker([1, 2], {
 	})
 }).bindPopup('<p>Hi</p>');
 
+L.marker([1, 2], {
+	icon: L.divIcon({
+		className: 'my-icon-class'
+	})
+}).setIcon(L.icon({
+	iconUrl: 'my-icon.png'
+})).setIcon(L.divIcon({
+	className: 'my-div-icon'
+}));;
+
 L.Util.extend({});
 L.Util.create({});
 L.Util.bind(() => {}, {});
