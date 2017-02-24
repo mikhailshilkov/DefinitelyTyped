@@ -598,6 +598,7 @@ declare namespace L {
         getCenter(): LatLng;
         getBounds(): LatLngBounds;
         addLatLng(latlng: LatLngExpression | LatLngExpression[]): this;
+        initialize(latlngs: LatLngExpression[], options?: PolylineOptions): void;
 
         options: PolylineOptions;
     }
